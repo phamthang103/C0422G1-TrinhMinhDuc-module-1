@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000px" height="1000px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class Rectangle{
+        constructor(length,width) {
+            this.length= length ;
+            this.width= width ;
+        }
+        getLength(){
+            return this.length;
+        }
+        getWidth(){
+            return this.width;
+        }
+        setlength(length) {
+            this.length  = length;
+        }
+        setWidth(width) {
+            this.width  = width ;
+        }
+        getArea() {
+            return this.width*this.length;
+        }
+        getPerimeter() {
+            return (this.width+this.length)*2;
+        }
+        // getBeginPath(){
+        //     return
+        //     ctx.moveTo(0,0);
+        //     ctx.lineTo(0,this.width*100);
+        //     ctx.lineTo(this.width*100,this.length*100);
+        //     ctx.lineTo(this.length*100,0);
+        //     ctx.lineTo(0,0);
+        //     ctx.stroke();
+        // };
+    }
+    // function getRandomColor(){
+    //     var red = getRandomHex();
+    //     var green = getRandomHex();
+    //     var blue = getRandomHex();
+    //     return "rgb("  + red + "," + blue + "," + green +")";
+    // }
+    function createRectangle(){
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var rectangle = new Rectangle(4,2);
+        rectangle.setlength(100)
+        rectangle.setWidth(200)
+        // let path= rectangle.getBeginPath();
+        let length = rectangle.getLength();
+        let width = rectangle.getWidth();
+        let perimeter= rectangle.getPerimeter();
+        let area =  rectangle.getArea();
+        alert("chiều dài hình chữ nhật là : " + length );
+        alert("chiều rộng hình chữ nhật là : " + width )
+        alert("diện tích hình chữ nhật là : " + area );
+        alert("chu vi hình chữ nhật là : " + perimeter );
+        // var color = getRandomColor();
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,this.width*100);
+        ctx.lineTo(this.width*100,this.length*100);
+        ctx.lineTo(this.length*100,0);
+        ctx.lineTo(0,0);
+        ctx.stroke();
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+    createRectangle()
+
+
+</script>
+</body>
+</html>

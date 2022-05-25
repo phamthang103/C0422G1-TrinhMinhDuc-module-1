@@ -7,55 +7,110 @@
 <body>
 <canvas id="DemoCanvas" width="500" height="600"></canvas>
 <script>
-    class Rectangle{
-        constructor(length,width) {
-            this.length= length ;
-            this.width= width ;
+   class Apple{
+       constructor(weight) {
+           this.weight= weight;
+       }
+       setWeight(weight){
+           this.weight= weight;
+       }
+       getWeight(){
+           return this.weight;
+       }
+
+       isEmpty() {
+           if(this.weight <= 0){
+              return true
+           }else
+             return false
+       }
+      decreaseApple(){
+           if (this.isEmpty()){
+               document.write("Đã hết tao rồi bạn ơi, hoi đừng ăn nữa nha")
+           }else {
+               this.weight--;
+           }
         }
-        getLength(){
-            return this.length;
-        }
-        getWidth(){
-            return this.width;
-        }
-        setlength(length) {
-            this.length  = length;
-        }
-        setWidth(width) {
-            this.width  = width ;
-        }
-        getArea() {
-            return this.width*this.length;
-        }
-        getPerimeter() {
-            return (this.width+this.length)*2;
-        }
-    }
-    function getRandomHex(){
-        return Math.floor(Math.random()*500);
-    }
-    function getRandomColor(){
-        var red = getRandomHex();
-        var green = getRandomHex();
-        var blue = getRandomHex();
-        return "rgb(" + red + "," + blue + "," + green +")";
-    }
-        var rectangle = new Rectangle(4,2);
-        rectangle.setlength(10)
-        rectangle.setWidth(20)
-        let length = rectangle.getLength();
-        let width = rectangle.getWidth();
-        let perimeter= rectangle.getPerimeter();
-        let area =  rectangle.getArea();
-        document.write("chiều dài hình chữ nhật là : " + length )
-        document.write("chiều rộng hình chữ nhật là : " + width )
-        document.write("diện tích hình chữ nhật là : " + area )
-        document.write("chu vi hình chữ nhật là : " + perimeter)
-        var color = getRandomColor();
-        let canvas = document.getElementById("DemoCanvas");
-        let ctx = canvas.getContext('2d');
-        ctx.fillStyle= color ;
-        ctx.fillRect(10, 10, width*10, length*10);
+   }
+   class Human{
+       constructor(name,gender,weight) {
+           this.name=name;
+           this.gender=gender;
+           this.weight=weight;
+       }
+       setName(name){
+           this.name=name;
+       }
+       getName(){
+           return this.name;
+       }
+       setGender(gender){
+           this.gender=gender;
+       }
+       isMale(){
+           if(this.gender == 1){
+               return true;
+           }else {
+               return false;
+           }
+       }
+       getGender(){
+           if(this.isMale()){
+               return "Male";
+           }else {
+               return "Female";
+           }
+       }
+       setWeight(weight){
+           this.weight=weight;
+       }
+       getWeight(){
+           return this.weight;
+       }
+       say(string) {
+           console.log(string);
+       }
+       checkApple(apple){
+           return apple.isEmpty();
+       }
+       eat(apple){
+           if(apple.getWeight() > 0){
+               apple.decreaseApple(); //1
+               this.weight++; //66
+           }else {
+               alert("Táo đã hết");
+           }
+       }
+       getInfo(human){
+           alert(human.name + " " +human.weight + " " +human.getGender());
+       }
+   }
+
+   let adam = new Human("adam", 1, 65);
+   let eva = new Human("eva", 2, 55);
+   let apple_1 = new Apple(10);
+
+
+   // adam.checkApple(apple_1)
+   adam.say("I am Adam" + "<br>");
+   eva.say("I am Eva" + "<br>");
+   while (apple_1.isEmpty() !== true) {
+       document.write("Adam ăn táo" + "<br>");
+       adam.eat(apple_1);
+
+       document.write("Quả táo còn: " + "<br>");
+       document.write(apple_1.getWeight() + " đơn vị" + "<br>");
+       document.write( "Cân nặng của Adm là: " + adam.getWeight() + " đơn vị" + "<br>");
+
+       document.write("<br>")
+
+       document.write("Eva ăn táo" + "<br>");
+       eva.eat(apple_1);
+
+       document.write("Quả táo còn: " + "<br>");
+       document.write(apple_1.getWeight() + " đơn vị" + "<br>");
+       document.write( "Cân nặng là: " + eva.getWeight() + " đơn vị" + "<br>");
+   }
 </script>
 </body>
 </html>

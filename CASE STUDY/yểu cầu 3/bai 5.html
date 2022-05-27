@@ -59,7 +59,6 @@
         console.log(c)
         console.log(sl)
         switch (operator) {
-            /*nhóm 1 - noi chuoi*/
             case '1':
                 result = " chọn cafe đơn giá 5000 đồng với số lượng là " + sl + " có tổng giá tiền là "+kg + " đồng" ;
                 break;
@@ -85,14 +84,47 @@
             case '8':
                 result = " chọn Trà thơm đơn giá 1500 đồng với số lượng là "+ sl + " có tổng giá tiền là "+kg + " đồng";
                 break;
-            /*Nhóm xử lý kết quả*/
             case '9':
                 result = " chọn Trà hoa đơn giá 2000 đồng với số lượng là "+ sl + " có tổng giá tiền là "+kg + " đồng";
                 break;
         }
         document.getElementById("result").innerText = result;
 
-    }
+
+
+
+
+
+        // let menu = ["Cafe", "Cam Vắt", "Nước Ép Cà Rốt", "Nước Ép cà chua", "Nước lọc", "Nước Dừa", "thoát gọi món"]
+        // let stt = [1, 2, 3, 4, 5, 6, 7]
+        // let primes = [45000, 50000, 30000, 25000, 10000, 50000]
+        // for (let i = 0; i < menu.length; i++) {
+        //     document.getElementById('menu').innerHTML += (i + 1) + "." + menu[i] + "<br>"
+        // }
+        //
+        // function chonMon() {
+        //     let sum=0;
+        //     let intnum=0
+        //     do {
+        //         intnum = parseInt(operator);
+        //         if (intnum>7){
+        //             alert("Món bạn chọn không có trong menu")
+        //         }else if (intnum == 7) {
+        //             alert("Tổng tiền là : "+sum)
+        //             break;
+        //         }else {
+        //             for (let i = 0; i < primes.length; i++) {
+        //                 if (intnum == (i + 1)) {
+        //                     alert("Giá tiền" + primes[i])
+        //                     let sl = +prompt("Số lượng muốn mua:")
+        //                     sum += primes[i] * sl;
+        //                 }
+        //             }
+        //         }
+        //
+        //     } while (intnum <= 7)
+        // }
+
 
 </script>
 </body>

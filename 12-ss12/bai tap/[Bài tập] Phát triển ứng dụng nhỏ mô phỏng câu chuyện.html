@@ -82,6 +82,7 @@
             if(apple.getWeight() > 0){
                 apple.decreaseApple(); //1
                 this.weight++; //66
+                console.log(this.weight)
             }else {
                 alert("Táo đã hết");
             }
@@ -102,11 +103,10 @@
     adam.say("I am Adam" + "<br>");
     eva.say("I am Eva" + "<br>");
 
-
+    //
     while (apple_1.isEmpty() !== true) {
         document.write("Adam ăn táo" + "<br>");
         adam.eat(apple_1);
-
         document.write("Quả táo còn: " + "<br>");
         document.write(apple_1.getWeight() + " đơn vị" + "<br>");
         document.write( "Cân nặng của Adm là: " + adam.getWeight() + " đơn vị" + "<br>");
